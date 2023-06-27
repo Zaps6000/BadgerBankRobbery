@@ -61,37 +61,14 @@ Citizen.CreateThread(function()
 							AddTextComponentString(bankcoords.name)
 							EndTextCommandSetBlipName(bankcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
-							useWhileDead = false,
-							canCancel = false,
-							controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-							},
-							animation = {
-								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-								anim = "machinic_loop_mechandplayer",
-								flags = 49,
-							},
-							prop = {
-								model = "prop_ing_crowbar",
-							}
-						}, function(status)
-							if not status and not IsEntityDead(GetPlayerPed(-1)) then
+						Wait(1000 * config.timeToRob)
+							if    not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the bank successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 							else
 								DisplayNotification('~r~Failed: Your bank robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end
-						end)
-						Wait(1000 * config.timeToRob)
-						RemoveBlip(bankcoords.blip)
 					end
 				end
 			end
@@ -114,37 +91,16 @@ Citizen.CreateThread(function()
 							AddTextComponentString(ammunationcoords.name)
 							EndTextCommandSetBlipName(ammunationcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
-							useWhileDead = false,
-							canCancel = false,
-							controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-							},
-							animation = {
-								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-								anim = "machinic_loop_mechandplayer",
-								flags = 49,
-							},
-							prop = {
-								model = "prop_ing_crowbar",
-							}
-						}, function(status)
-							if not status and not IsEntityDead(GetPlayerPed(-1)) then
+						
+							if not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the Ammunation successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 							else
 								DisplayNotification('~r~Failed: Your Ammunation robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end
-						end)
+						
 						Wait(1000 * config.timeToRob)
-						RemoveBlip(ammunationcoords.blip)
 					end
 				end
 			end
@@ -167,37 +123,15 @@ Citizen.CreateThread(function()
 							AddTextComponentString(shopcoords.name)
 							EndTextCommandSetBlipName(shopcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
-							useWhileDead = false,
-							canCancel = false,
-							controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-							},
-							animation = {
-								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-								anim = "machinic_loop_mechandplayer",
-								flags = 49,
-							},
-							prop = {
-								model = "prop_ing_crowbar",
-							}
-						}, function(status)
-							if not status and not IsEntityDead(GetPlayerPed(-1)) then
+						Wait(1000 * config.timeToRob)
+
+							if not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the 24/7 successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 							else
 								DisplayNotification('~r~Failed: Your 24/7 robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end
-						end)
-						Wait(1000 * config.timeToRob)
-						RemoveBlip(shopcoords.blip)
 					end
 				end
 			end
@@ -220,37 +154,16 @@ Citizen.CreateThread(function()
 							AddTextComponentString(ltdcoords.name)
 							EndTextCommandSetBlipName(ltdcoords.blip)
 						end
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
-							useWhileDead = false,
-							canCancel = false,
-							controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-							},
-							animation = {
-								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-								anim = "machinic_loop_mechandplayer",
-								flags = 49,
-							},
-							prop = {
-								model = "prop_ing_crowbar",
-							}
-						}, function(status)
-							if not status and not IsEntityDead(GetPlayerPed(-1)) then
+					
+						Wait(1000 * config.timeToRob)
+
+							if not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the LTD Gas Station successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 							else
 								DisplayNotification('~r~Failed: Your LTD Gas Station robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end
-						end)
-						Wait(1000 * config.timeToRob)
-						RemoveBlip(ltdcoords.blip)
 					end
 				end
 			end
@@ -271,37 +184,15 @@ Citizen.CreateThread(function()
 						BeginTextCommandSetBlipName("STRING")
 						AddTextComponentString(liquorcoords.name)
 						EndTextCommandSetBlipName(liquorcoords.blip)
-						TriggerEvent("mythic_progressbar:client:progress", {
-							name = "RobbingTheBank",
-							duration = (1000 * config.timeToRob), -- 1000ms * x seconds
-							label = config.robbingStr,
-							useWhileDead = false,
-							canCancel = false,
-							controlDisables = {
-								disableMovement = true,
-								disableCarMovement = true,
-								disableMouse = false,
-								disableCombat = true,
-							},
-							animation = {
-								animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-								anim = "machinic_loop_mechandplayer",
-								flags = 49,
-							},
-							prop = {
-								model = "prop_ing_crowbar",
-							}
-						}, function(status)
-							if not status and not IsEntityDead(GetPlayerPed(-1)) then
+						Wait(1000 * config.timeToRob)
+
+							if  not IsEntityDead(GetPlayerPed(-1)) then
 								DisplayNotification('~g~Success: You have robbed the Liquor Store successfully!')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberySuccess)
 							else
 								DisplayNotification('~r~Failed: Your Liquor Store robbery has failed.')
 								TriggerServerEvent('PrintBR:PrintMessage', config.robberyFailed)
 							end
-						end)
-						Wait(1000 * config.timeToRob)
-						RemoveBlip(liquorcoords.blip)
 					end
 				end
 			end
