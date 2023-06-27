@@ -1,3 +1,4 @@
+NDCore = exports["ND_Core"]:GetCoreObject()
 -------------------------
 --- BadgerBankRobbery ---
 -------------------------
@@ -32,4 +33,11 @@ end)
 RegisterNetEvent('PrintBR:PrintMessage')
 AddEventHandler('PrintBR:PrintMessage', function(msg)
 	TriggerClientEvent('chatMessage', -1, msg)
+end)
+
+RegisterNetEvent("bankRobbery")
+AddEventHandler("bankRobbery", function(amount)
+  local source = source
+  NDCore.Functions.AddMoney(amount, source, "cash", "bank robbbery")
+  TriggerClientEvent("chatMessage", source, "You got $" .. amount .. " from the bank robbery!")
 end)
